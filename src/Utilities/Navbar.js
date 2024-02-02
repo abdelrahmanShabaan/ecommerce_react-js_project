@@ -19,6 +19,16 @@ function Navbar() {
                 <li className="nav-item">
                     <Link className="nav-link" to="/home" style={{ color: 'white' }}>Home</Link>
                 </li>
+                <li className="nav-item">
+                    <Link className="nav-link" to="/home" style={{ color: 'white' }}>Categories</Link>
+                </li>
+                <li className="nav-item">
+                    <Link className="nav-link" to="/home" style={{ color: 'white' }}>shop</Link>
+                </li>
+                <li className="nav-item">
+                    <Link className="nav-link" to="/home" style={{ color: 'white' }}>Contactus</Link>
+                </li>
+              
                </ul>
                </div>
            </div>
@@ -28,7 +38,7 @@ function Navbar() {
                     <Link className="nav-link" to="/login" style={{ color: 'white' }}>Login</Link>
                 </li>
                 <li>
-                    <Link className="nav-link" to="/home" style={{ color: 'white' }}>Signup</Link>
+                    <Link className="nav-link" to="/signup" style={{ color: 'white' }}>Signup</Link>
                 </li>
                </ul>
          </nav>

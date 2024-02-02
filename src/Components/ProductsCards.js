@@ -5,17 +5,6 @@ import axios from 'axios';
 
  function ProductsCards(props) {
 
-                    // Save dataname
-                    const [products, setproducts] = useState([])
-
-
-                            
-                    // //get data with axios
-                    useEffect(() => {
-                        axios.get(`https://dummyjson.com/products`)
-                            .then((res)=> {setproducts(res.data)})
-                            .catch((err) => console.log(err));
-                        },[])
 
 
   return (
@@ -26,9 +15,19 @@ import axios from 'axios';
                 <img src={props.thumbnail} />
             </div>    
             <div className='info'>
-              <p className='title'>{props.title}</p> 
+              <p className='titles'>{props.title}</p> 
                 <p className='vote'>Price:{props.price}</p>
+                <p className='vote'>discount:{props.discountPercentage}</p>
+                <p className='vote'>brand:{props.brand}</p>
             </div>
+
+
+            <div className='oveview'>
+            <button className='btn btn-danger title_overview'>Overview</button> 
+            <button className="btn btn-outline-danger favbut ">add To cart</button>
+
+            </div>
+
         </div>
         </>
   )
