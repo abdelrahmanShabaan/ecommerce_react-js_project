@@ -1,0 +1,49 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family:  sans-serif;
+}
+
+.App{
+    padding: 1.5rem;
+    background-color: rgb(50, 50, 103);    
+}
+
+.container{
+    margin-top: 0.5rem;
+}
+.products_class{
+
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.search_nav{
+    display: flex;
+    align-items: center;
+    padding-bottom: 1.5rem;
+}
+
+.title{
+    padding-right: 3rem;
+}
+
+.title h1{
+    color:white;
+}
+
+.search_box {
+    display: flex;
+    width: 92%;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+.input_style{
+    background-color:gold;
+    
+}

@@ -1,0 +1,60 @@
+.card{
+    max-height: 25rem;
+    width:13rem;
+    margin-right:  1.5rem;
+    margin-bottom:  1.5rem;
+    background-color:black;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0px 5px 10px 0px;
+}
+
+
+.poster img {
+    max-width:13rem;
+    max-height: 20rem;
+}
+
+.info{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    
+}
+
+.oveview{
+    transform: translateY(100%);
+    position: absolute;
+    text-align: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    pad: 1rem;
+    overflow: auto;
+    margin-top: 18rem;
+    transition: 0.3s ease-in-out;
+
+
+}
+.title_overview{
+    text-align:center;
+    background-color: gold;
+    color: #000;
+    font-size: larger;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0.4rem;
+    width:auto
+}
+
+
+.favbut{
+    text-align: center;
+    background-color: red;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.card:hover .oveview {
+    transform: translateY(0%);
+}
