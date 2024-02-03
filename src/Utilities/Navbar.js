@@ -54,7 +54,7 @@ function Navbar({ isAuthenticated, onLogout }) {
                     <Link className="nav-link" to="/home" style={{ color: 'white' }}>Home</Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link" to="/home" style={{ color: 'white' }}>Categories</Link>
+                    <Link className="nav-link" to="/categories_page" style={{ color: 'white' }}>Categories</Link>
                 </li>
                 <li className="nav-item">
                     <Link className="nav-link" to="/home" style={{ color: 'white' }}>shop</Link>
