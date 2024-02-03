@@ -4,6 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import AddToCartAction from '../Store/Actions/AddToCartAction';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import axios from 'axios';
+import { FaHeart } from "react-icons/fa";
+import { AddToFavoriteAction } from '../Store/Actions/AddToFavoriteAction';
+
 
 
  function ProductsCards(props) {
@@ -44,6 +47,28 @@ import axios from 'axios';
             }
 
 
+              //--------------------------- start handle favoriate icon -------------------------------//
+
+              const favoriaters = useSelector((state) => state.favoriate.favoriate) 
+
+              const dispatch_two = useDispatch()
+  
+              const addToFav = () =>{
+                  // //dispatch action with action name useDispatch
+                  const isAlreadyAddedFav = favoriaters.some((favorite) => favorite.id === props.id);
+  
+                  //if condition if it's added 
+                  if (isAlreadyAddedFav) {
+                      alert("This item is already in favorites!");
+                  } else {
+                      // Dispatch action to add the item to favorites
+                      dispatch_two(AddToFavoriteAction(props))
+                  }
+                  
+              }
+  
+
+
 
   return (
 
@@ -63,7 +88,7 @@ import axios from 'axios';
             <div className='oveview'>
             <Link to={`/cartsdata/${props.id}`}>  <button className='btn btn-priamry title_overviews'>Overview</button> </Link>
             <button className="btn btn-outline-danger favbut " onClick={() => addToCart()}>add To cart</button>
-
+            <button className="btn btn-outline-danger favbut" onClick={() => addToFav()}>add To <FaHeart /></button>
             </div>
 
         </div>

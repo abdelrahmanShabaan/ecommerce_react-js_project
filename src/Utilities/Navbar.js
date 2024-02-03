@@ -2,6 +2,7 @@ import { Link, useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { useEffect, useState } from "react";
 import { GiShoppingCart } from "react-icons/gi";
 import { useSelector } from "react-redux";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 
 
@@ -36,6 +37,8 @@ function Navbar({ isAuthenticated, onLogout }) {
                     //----------------------Handle Counters of products ------------------------------//
                     const cartsCount = useSelector((state) => state.cart.cart.length);
 
+                    //----------------------Handle Counters of products ------------------------------//
+                    const favoritesCount = useSelector((state) => state.favoriate.favoriate.length);
 
         return(
         <> 
@@ -65,10 +68,12 @@ function Navbar({ isAuthenticated, onLogout }) {
            </div>
            <nav style={{marginRight: '1rem'}}>
             <ul className="navbar-nav me-auto mb-2 mb-lg-0" > 
-                <li className="nav-item">
-                <Link className="nav-item" to="/cart" style={{ color: 'white' }}> <GiShoppingCart />  {cartsCount} cart </Link>
-                </li>
-
+            <li className="nav-item">
+            <Link className="nav-item" to="/whishlist" style={{ color: 'white' }}> <FaRegHeart  style={{ color: 'red' }} />  {favoritesCount} Whishlist </Link>
+            </li>
+            <li className="nav-item">
+            <Link className="nav-item" to="/cart" style={{ color: 'white' }}> <GiShoppingCart />  {cartsCount} cart </Link>
+            </li>
                 <li>
                     <Link className="nav-link signup_display" to="/signup" id="sign_item" style={{ display: isLocalStorageEmpty ? 'none' : 'block' ,  color: 'white'}}>signup</Link>
                 </li>
