@@ -66,9 +66,8 @@ function Navbar({ isAuthenticated, onLogout }) {
            <nav style={{marginRight: '1rem'}}>
             <ul className="navbar-nav me-auto mb-2 mb-lg-0" > 
                 <li className="nav-item">
-                    <Link className="nav-link" to="/cart" style={{ color: 'white' }}>cart</Link>
+                <Link className="nav-item" to="/cart" style={{ color: 'white' }}> <GiShoppingCart />  {cartsCount} cart </Link>
                 </li>
-                <li className="nav-item" style={{ color: 'white' }}>  <GiShoppingCart /> {cartsCount} </li>
 
                 <li>
                     <Link className="nav-link signup_display" to="/signup" id="sign_item" style={{ display: isLocalStorageEmpty ? 'none' : 'block' ,  color: 'white'}}>signup</Link>

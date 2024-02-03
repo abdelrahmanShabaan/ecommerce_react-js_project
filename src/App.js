@@ -33,6 +33,7 @@ function App() {
           <Route path="/login"> <LoginPage onLogin={() => setIsAuthenticated(true)} />  </Route>
           <Route exact path={"/signup"} component={Registeration} />
           <Route exact path={"/cart"} component={CartPage} />
+          <Route exact path={"/cart:id"} component={OneProductCart} />
 
 
     </Switch>
