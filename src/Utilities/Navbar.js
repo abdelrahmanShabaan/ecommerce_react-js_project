@@ -1,7 +1,7 @@
 import { Link, useHistory } from "react-router-dom/cjs/react-router-dom.min";
-
-import './NavbarStyle.css';
 import { useEffect, useState } from "react";
+import { GiShoppingCart } from "react-icons/gi";
+import { useSelector } from "react-redux";
 
 
 
@@ -22,8 +22,8 @@ function Navbar({ isAuthenticated, onLogout }) {
                 onLogout();
             };
 
+
             // -----------------------Handel register li if login / logout -----------------/
-              
                   // State to track whether localStorage.email is null
                   const [isLocalStorageEmpty, setIsLocalStorageEmpty] = useState(localStorage.email != null);
                                     
@@ -33,7 +33,9 @@ function Navbar({ isAuthenticated, onLogout }) {
                 }, []);
 
 
-  
+                    //----------------------Handle Counters of products ------------------------------//
+                    const cartsCount = useSelector((state) => state.cart.cart.length);
+
 
         return(
         <> 
@@ -63,6 +65,11 @@ function Navbar({ isAuthenticated, onLogout }) {
            </div>
            <nav style={{marginRight: '1rem'}}>
             <ul className="navbar-nav me-auto mb-2 mb-lg-0" > 
+                <li className="nav-item">
+                    <Link className="nav-link" to="/cart" style={{ color: 'white' }}>cart</Link>
+                </li>
+                <li className="nav-item" style={{ color: 'white' }}>  <GiShoppingCart /> {cartsCount} </li>
+
                 <li>
                     <Link className="nav-link signup_display" to="/signup" id="sign_item" style={{ display: isLocalStorageEmpty ? 'none' : 'block' ,  color: 'white'}}>signup</Link>
                 </li>

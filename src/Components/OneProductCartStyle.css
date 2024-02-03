@@ -1,0 +1,41 @@
+.cards {
+    width: 100%;
+    max-width: 400px; /* Adjust the maximum width as needed */
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    }
+    
+    .cards img {
+    width: 100%;
+    max-height: 200px; /* Adjust the maximum height as needed */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    }
+    
+    .cards-body {
+    padding: 16px;
+    }
+    
+    .cards-title {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+    }
+    
+    .cards-title:last-child {
+    margin-bottom: 0;
+    }
+    
+    .cards-title + .card-title {
+    color: black; /* Adjust the color as needed */
+    }
+    
+    .cards p {
+    font-size: 1em;
+    color: black; /* Adjust the color as needed */
+    }
+    
+    /* You can add more styling as per your requirements */
+    
