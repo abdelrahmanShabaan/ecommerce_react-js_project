@@ -1,6 +1,7 @@
 import { Link, useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 import './NavbarStyle.css';
+import { useEffect, useState } from "react";
 
 
 
@@ -22,16 +23,16 @@ function Navbar({ isAuthenticated, onLogout }) {
             };
 
             // -----------------------Handel register li if login / logout -----------------/
-                            
-                if(sessionStorage.email === null)
-                {
-                    //change style
-                    let change_happen = document.getElementById('sign_item');
-                    change_happen.style.display = 'block';
+              
+                  // State to track whether localStorage.email is null
+                  const [isLocalStorageEmpty, setIsLocalStorageEmpty] = useState(localStorage.email != null);
+                                    
+                useEffect(() => {
+                    // Update the state when the component mounts
+                    setIsLocalStorageEmpty(localStorage.email != null);
+                }, []);
 
-                }else{
-                    //
-                }
+
   
 
         return(
@@ -63,7 +64,7 @@ function Navbar({ isAuthenticated, onLogout }) {
            <nav style={{marginRight: '1rem'}}>
             <ul className="navbar-nav me-auto mb-2 mb-lg-0" > 
                 <li>
-                    <Link className="nav-link signup_display" id="sign_item" to="/signup" style={{ color: 'white' }}>signup</Link>
+                    <Link className="nav-link signup_display" to="/signup" id="sign_item" style={{ display: isLocalStorageEmpty ? 'none' : 'block' ,  color: 'white'}}>signup</Link>
                 </li>
                 <li className="nav-item">
             {isAuthenticated ? (
