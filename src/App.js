@@ -6,8 +6,8 @@ import Home from './Pages/Home';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Registeration from './Auth/Registeration';
 import LoginPage from './Auth/LoginPage';
-import OneProductCart from './Components/OneProductCart';
 import CartPage from './Pages/CartPage';
+import OneProductCart from './Components/OneProductCart';
 
 function App() {
   
@@ -33,7 +33,8 @@ function App() {
           <Route path="/login"> <LoginPage onLogin={() => setIsAuthenticated(true)} />  </Route>
           <Route exact path={"/signup"} component={Registeration} />
           <Route exact path={"/cart"} component={CartPage} />
-          <Route exact path={"/cart:id"} component={OneProductCart} />
+          <Route exact path={"/cartsdata/:id"} component={OneProductCart} />
+
 
 
     </Switch>

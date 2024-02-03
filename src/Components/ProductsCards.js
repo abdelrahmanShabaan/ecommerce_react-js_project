@@ -1,12 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import './ProductsCard.css';
-import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import AddToCartAction from '../Store/Actions/AddToCartAction';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import axios from 'axios';
 
 
  function ProductsCards(props) {
 
+
+
+    
+            // Save dataname
+            const [products, setproducts] = useState([])
+            
+            // //get data with axios
+            useEffect(() => {
+                axios.get(`https://dummyjson.com/products`)
+                    .then((res)=> {setproducts(res.data.products)})
+                    .catch((err) => console.log(err));
+                },[])
 
 
                 
@@ -48,7 +61,7 @@ import AddToCartAction from '../Store/Actions/AddToCartAction';
 
 
             <div className='oveview'>
-            <button className='btn btn-danger title_overview'>Overview</button> 
+            <Link to={`/cartsdata/${props.id}`}>  <button className='btn btn-priamry title_overviews'>Overview</button> </Link>
             <button className="btn btn-outline-danger favbut " onClick={() => addToCart()}>add To cart</button>
 
             </div>
