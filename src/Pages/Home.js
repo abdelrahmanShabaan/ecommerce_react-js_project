@@ -25,6 +25,7 @@ function Home(){
             //---------------------------------- search api -----------------------------------------//  
             const API_SEARCH = "https://dummyjson.com/products/search?q="
 
+
             //new state input change of search 
             const [term , setTerm] = useState('')
 

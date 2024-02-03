@@ -4,8 +4,6 @@ import { GiShoppingCart } from "react-icons/gi";
 import { useSelector } from "react-redux";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 
-
-
 function Navbar({ isAuthenticated, onLogout }) {
 
     // ---------------------------Handle login ------------------------ //
@@ -23,7 +21,6 @@ function Navbar({ isAuthenticated, onLogout }) {
                 onLogout();
             };
 
-
             // -----------------------Handel register li if login / logout -----------------/
                   // State to track whether localStorage.email is null
                   const [isLocalStorageEmpty, setIsLocalStorageEmpty] = useState(localStorage.email != null);
@@ -39,6 +36,9 @@ function Navbar({ isAuthenticated, onLogout }) {
 
                     //----------------------Handle Counters of products ------------------------------//
                     const favoritesCount = useSelector((state) => state.favoriate.favoriate.length);
+
+
+                            
 
         return(
         <> 
@@ -57,12 +57,12 @@ function Navbar({ isAuthenticated, onLogout }) {
                     <Link className="nav-link" to="/categories_page" style={{ color: 'white' }}>Categories</Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link" to="/home" style={{ color: 'white' }}>shop</Link>
+                    <Link className="nav-link" to="/cart" style={{ color: 'white' }}>MyCart</Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link" to="/home" style={{ color: 'white' }}>Contactus</Link>
+                    <Link className="nav-link" to="/whishlist" style={{ color: 'white' }}>Favoriate Page</Link>
                 </li>
-              
+
                </ul>
                </div>
            </div>
