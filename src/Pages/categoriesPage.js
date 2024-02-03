@@ -1,52 +1,61 @@
+// CategoriesPage.js
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './CategoriesPageStyle.css';
+
 function CategoriesPage() {
-    // Save data
-    const [categories, setCategories] = useState([]);
-    const [keyword, setKeyword] = useState("smartphones");
 
-    // Call API
-    useEffect(() => {
-        axios.get(`https://dummyjson.com/products/category/${keyword}`)
-            .then((res) => {
-                setCategories(res.data.products);
-            })
-            .catch((err) => console.log(err));
-    }, [keyword]);
 
-    // Handle change categories
-    const handleChange = (e) => {
-        setKeyword(e.target.value);
-    };
+                const [categories, setCategories] = useState([]);
+                const [selectedCategory, setSelectedCategory] = useState("smartphones");
 
-    return (
-        <>
-          <div className='container'>
-              {/* Handle languages */}
-              <select className="form-select" aria-label="Default select example" onChange={(e) => handleChange(e)}>
-                <option selected>Select Categories</option>
-                <option value="smartphones">phones</option>
-                <option value="laptops">laptops</option>
-                <option value="fragrances">fragrances</option>
-                <option value="fragrances">groceries</option>
-            </select>
+                useEffect(() => {
+                    axios.get(`https://dummyjson.com/products/category/${selectedCategory}`)
+                    .then((res) => {
+                        setCategories(res.data.products);
+                    })
+                    .catch((err) => console.log(err));
+                }, [selectedCategory]);
 
-                {categories.map((category) => (
-                    <div key={category.id}>
-                        <div className="card card_box">
-                        <img  className="card-img-top" src={category.thumbnail} />
-                        <div className="card-body">
-                            <h5 className="card-title">{category.title}</h5>
-                            <p className="card-text">{category.description}</p>
-                            <a href="#" className="btn btn-primary">Add to Cart</a>
-                        </div>
-                        </div>
-                    </div>
-                ))}
+
+
+                const handleChange = (e) => {
+                    setSelectedCategory(e.target.value);
+                };
+
+  return (
+    <div className='container containerss'>
+      <div className='filter-container'>
+        <h1 className='filter-heading'>Categories</h1>
+        {/* Left side filter */}
+        <div className='category-buttons'>
+          <button className={`btn ${selectedCategory === "smartphones" ? 'btn-primary' : 'btn-secondary'} category-button`} value="smartphones" onClick={handleChange}>Phones</button>
+          <button className={`btn ${selectedCategory === "laptops" ? 'btn-primary' : 'btn-secondary'} category-button`} value="laptops" onClick={handleChange}>Laptops</button>
+          <button className={`btn ${selectedCategory === "fragrances" ? 'btn-primary' : 'btn-secondary'} category-button`} value="fragrances" onClick={handleChange}>Fragrances</button>
+          <button className={`btn ${selectedCategory === "groceries" ? 'btn-primary' : 'btn-secondary'} category-button`} value="groceries" onClick={handleChange}>groceries</button>    
+          <button className={`btn ${selectedCategory === "womens-watches" ? 'btn-primary' : 'btn-secondary'} category-button`} value="womens-watches" onClick={handleChange}>womens-watches</button>
+          <button className={`btn ${selectedCategory === "furniture" ? 'btn-primary' : 'btn-secondary'} category-button`} value="furniture" onClick={handleChange}>furniture</button>
+
+        </div>
+      </div>
+      
+      
+      {/* Right side content */}
+      <div className='category-content'>
+        {categories.map((category) => (
+          <div key={category.id} className="card card_box">
+            <img className="card-img-top" src={category.thumbnail} alt={category.title} />
+            <div className="card-body">
+              <h5 className="card-title">{category.title}</h5>
+              <p className="card-text">{category.description}</p>
+              <a href="#" className="btn btn-primary">Add to Cart</a>
+            </div>
           </div>
-        </>
-    );
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default CategoriesPage;
