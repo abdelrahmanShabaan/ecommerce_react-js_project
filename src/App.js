@@ -8,6 +8,7 @@ import Registeration from './Auth/Registeration';
 import LoginPage from './Auth/LoginPage';
 import CartPage from './Pages/CartPage';
 import OneProductCart from './Components/OneProductCart';
+import FavoritesPage from './Pages/FavoritesPage';
 
 function App() {
   
@@ -34,6 +35,7 @@ function App() {
           <Route exact path={"/signup"} component={Registeration} />
           <Route exact path={"/cart"} component={CartPage} />
           <Route exact path={"/cartsdata/:id"} component={OneProductCart} />
+          <Route exact path={"/whishlist"} component={FavoritesPage} />
 
 
 
