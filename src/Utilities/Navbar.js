@@ -1,10 +1,38 @@
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { Link, useHistory } from "react-router-dom/cjs/react-router-dom.min";
+
+import './NavbarStyle.css';
 
 
 
+function Navbar({ isAuthenticated, onLogout }) {
 
-function Navbar() {
+    // ---------------------------Handle login ------------------------ //
+    const history = useHistory();
 
+    const handleLogout = () => {
+        // Perform any logout logic (clear local storage, etc.)
+        localStorage.removeItem("email");
+        localStorage.removeItem("password");
+    
+            // Redirect to the login page
+            history.push("/home");
+                    
+                // Trigger the parent component's logout handler
+                onLogout();
+            };
+
+            // -----------------------Handel register li if login / logout -----------------/
+                            
+                if(sessionStorage.email === null)
+                {
+                    //change style
+                    let change_happen = document.getElementById('sign_item');
+                    change_happen.style.display = 'block';
+
+                }else{
+                    //
+                }
+  
 
         return(
         <> 
@@ -35,11 +63,15 @@ function Navbar() {
            <nav style={{marginRight: '1rem'}}>
             <ul className="navbar-nav me-auto mb-2 mb-lg-0" > 
                 <li>
-                    <Link className="nav-link" to="/login" style={{ color: 'white' }}>Login</Link>
+                    <Link className="nav-link signup_display" id="sign_item" to="/signup" style={{ color: 'white' }}>signup</Link>
                 </li>
-                <li>
-                    <Link className="nav-link" to="/signup" style={{ color: 'white' }}>Signup</Link>
-                </li>
+                <li className="nav-item">
+            {isAuthenticated ? (
+              <button className="btn btn-link" onClick={handleLogout}>Logout</button>
+            ) : (
+              <Link className="nav-link" to="/login" style={{ color: 'white' }}>Login</Link>
+            )}
+          </li>
                </ul>
          </nav>
          </nav>

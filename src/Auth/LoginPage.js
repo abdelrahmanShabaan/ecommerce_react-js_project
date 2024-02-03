@@ -56,7 +56,7 @@ function LoginPage(){
 
         //use effect to run page after check 
         const history = useHistory();
-        
+
           useEffect(() => {
             // Check if email and password are in local storage and redirect to home page
             const storedEmail = localStorage.getItem('email');
@@ -67,22 +67,30 @@ function LoginPage(){
             }
         }, [history]);
 
+        
+     // ------------- span of Not Found Email ------------//
+     const [NotFoundEmail, setNotFoundMessage] = useState("");
+
 
         //function submit
         const submitData = (e) => {
             e.preventDefault()
             if(!errors.nameError && !errors.passwordErr){
             // Check if email and password are in local storage
-            const storedEmail = localStorage.getItem('email');
-            const storedPassword = localStorage.getItem('password');
+            const storedEmail = sessionStorage.getItem('email');
+            const storedPassword = sessionStorage.getItem('password');
 
             if (storedEmail === data.name && storedPassword === data.password) {
-                console.log("Email found");
                 // Redirect to home page after successful login
-                history.push('/home'); // Adjust the route based on your actual setup
+                localStorage.setItem('email', data.name);
+                localStorage.setItem('password', data.password);
+                
+                 history.push('/home'); // Adjust the route based on your actual setup
+
             } else {
-                console.log("Email not found or password is incorrect");
                 // Handle incorrect email or password logic here
+                setNotFoundMessage("Email not found or password is incorrect");
+
             }
         }
     }
@@ -93,6 +101,9 @@ function LoginPage(){
         <>
         <div className="container">
              <h1 className="text-primary text-center">Login Form</h1>
+             {/* Email Not Found */}
+             {NotFoundEmail && (   <div className="alert alert-success mt-3" role="alert" style={{textAlign : 'center' , fontSize:'2rem'}}> {NotFoundEmail} </div>  )}
+
             <form onSubmit={(e) => submitData(e)}>
             <div className="mb-3">
             <label htmlFor="exampleInputEmail1" className="form-label">Email Address</label>

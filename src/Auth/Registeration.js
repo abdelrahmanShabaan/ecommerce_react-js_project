@@ -82,8 +82,12 @@ function Registeration() {
             // Save email and password in local storage
             localStorage.setItem('email', data.name);
             localStorage.setItem('password', data.password);
-            setSuccessMessage("Registration successful");
 
+            //another once to save data of user if he want to login again
+            sessionStorage.setItem('email', data.name);
+            sessionStorage.setItem('password', data.password);
+            //print successfully message
+            setSuccessMessage("Registration successful");
 
             }
         };
