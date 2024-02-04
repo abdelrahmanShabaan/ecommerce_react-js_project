@@ -80,8 +80,8 @@ function Registeration() {
             // ---------------------------------------- Form submission logic ---------------------------------//
            // console.log("Registration successful and save in local storage");
             // Save email and password in local storage
-            localStorage.setItem('email', data.name);
-            localStorage.setItem('password', data.password);
+            // localStorage.setItem('email', data.name);
+            // localStorage.setItem('password', data.password);
 
             //another once to save data of user if he want to login again
             sessionStorage.setItem('email', data.name);

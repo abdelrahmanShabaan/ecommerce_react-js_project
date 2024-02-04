@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { GiShoppingCart } from "react-icons/gi";
 import { useSelector } from "react-redux";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
+import { CgProfile } from "react-icons/cg";
 
 function Navbar({ isAuthenticated, onLogout }) {
 
@@ -68,6 +69,8 @@ function Navbar({ isAuthenticated, onLogout }) {
            </div>
            <nav style={{marginRight: '1rem'}}>
             <ul className="navbar-nav me-auto mb-2 mb-lg-0" > 
+            <li className="nav-item" to="/whishlist" style={{ color: 'white', marginRight : '1rem' , textAlign: 'center' }}> <CgProfile /> welcome {localStorage.email} </li>
+
             <li className="nav-item">
             <Link className="nav-item" to="/whishlist" style={{ color: 'white' }}> <FaRegHeart  style={{ color: 'red' }} />  {favoritesCount} Whishlist </Link>
             </li>
