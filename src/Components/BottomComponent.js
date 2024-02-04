@@ -49,22 +49,23 @@ const BottomComponent = () => {
         justifyContent: 'space-around',
         bottom: 0, // Set bottom to 0
 
+
       },
-      section: {
-        flex: 1,
-        margin: '0 20px',
-      },
-      sectionTitle: {
-        fontSize: '18px',
-        marginBottom: '10px',
-      },
-      list: {
-        listStyle: 'none',
-        padding: 0,
-        margin: 0,
-        fontSize: '14px',
-      },
-    };
+section: {
+flex: 1,
+margin: '0 20px',
+},
+sectionTitle: {
+fontSize: '18px',
+marginBottom: '10px',
+},
+list: {
+listStyle: 'none',
+padding: 0,
+margin: 0,
+fontSize: '14px',
+},
+};
     
 
 export default BottomComponent;
