@@ -3,6 +3,7 @@ import ProductsCards from '../Components/ProductsCards';
 import './HomeStyle.css';
 import axios from 'axios';
 import React from 'react';
+import BottomComponent from '../Components/BottomComponent';
 
 
 
@@ -25,6 +26,7 @@ function Home(){
             //---------------------------------- search api -----------------------------------------//  
             const API_SEARCH = "https://dummyjson.com/products/search?q="
 
+            
 
             //new state input change of search 
             const [term , setTerm] = useState('')
@@ -46,10 +48,8 @@ function Home(){
             <>
 
                 <div className="container">  
-
-
                 {/* search */}
-                <div className='search_box'>
+                <div className='search_boxs'>
                     <form class="form-control" onSubmit={handleSearch}>
                     <input class="form-control input_style" onChange={(e) => setTerm(e.target.value) } type="search" placeholder="Search for products" aria-label="Search"/>
                     </form>
@@ -63,11 +63,9 @@ function Home(){
                         </div>
 
 
-
-
-
-
                 </div>
+                <BottomComponent />
+
             </>
             )
 
