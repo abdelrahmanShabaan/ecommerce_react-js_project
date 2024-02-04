@@ -1,5 +1,6 @@
 .containerss {
   display: flex;
+  float: left;
   justify-content: space-between;
   padding: 20px;
 }

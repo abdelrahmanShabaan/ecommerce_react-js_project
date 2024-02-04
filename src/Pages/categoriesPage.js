@@ -49,6 +49,7 @@ function CategoriesPage() {
             <div className="card-body">
               <h5 className="card-title">{category.title}</h5>
               <p className="card-text">{category.description}</p>
+              <p className="card-text">price :{category.price}$</p>
               <a href="#" className="btn btn-primary">Add to Cart</a>
             </div>
           </div>

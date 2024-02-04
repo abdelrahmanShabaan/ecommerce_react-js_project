@@ -25,11 +25,11 @@ const FavoritesPage = () => {
 
       {favorites.map((favor) => (
     <div key={favor.id}>
-        <div className="card card_favor" style={{ display: "flex", flexWrap: "wrap" }}>
+        <div className="card_favor" style={{ display: "flex", flexWrap: "wrap" }}>
             <img className='card-img' src={favor.thumbnail } />
-            <p className="card_winer  texto">{favor.title}</p>
-            <p className="card_winer texto">{favor.description}</p>
-            <p className="card_winer texto"> Category :{favor.category}</p>
+            <p class="card_favor-title texto">{favor.title}</p>
+            <p class="card_favor-text texto">{favor.description}</p>
+            <p class="card_favor-text texto"> Category :{favor.category}</p>
             <button className='btn btn-danger' style={{width : '100%' }} onClick={(event) => handleRemove(event, favor.id)}>Remove</button>
         </div>
     </div>

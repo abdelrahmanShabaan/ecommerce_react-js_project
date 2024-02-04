@@ -51,8 +51,8 @@ function OneProductCart() {
             }
             } else {
                 setCartMessage('Please log in to add items to the cart.');
-                // Alternatively, you can redirect the user to the login page
-            // history.push('/login');
+      
+                
             }
         };
 

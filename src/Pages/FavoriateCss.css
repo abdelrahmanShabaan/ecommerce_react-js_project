@@ -3,17 +3,64 @@
     margin: 0;
     font-family:  sans-serif;
 }
-.card_favor{
-    float: left;
-    margin: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    max-height: 35rem;
 
+.card_favor {
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+float: left;
+max-height: 100%;
+margin: 2px;
+width: 250px; /* Adjust width as needed */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+border-radius: 8px;
+overflow: hidden;
+transition: transform 0.2s ease-in-out;
 }
 
-.texto{ 
+.texto_new{ 
 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border-radius: 1%;
+}
+
+.card_favor:hover {
+transform: scale(1.05);
+}
+
+.card_favor-img-top {
+width: 100%;
+height: 300px; /* Adjust height as needed */
+object-fit: cover;
+border-radius: 8px 8px 0 0;
+}
+
+.card_favor-body {
+padding: 15px;
+text-align: center;
+}
+
+.card_favor-title {
+font-size: 1.2rem;
+margin-bottom: 10px;
+font-weight: bold;
+}
+
+.card_favor-text {
+font-size: 1rem;
+color: #555;
+margin-bottom: 15px;
+}
+
+.btn-danger {
+background-color: #dc3545;
+color: white;
+border: none;
+padding: 10px;
+cursor: pointer;
+border-radius: 4px;
+}
+
+.btn-danger:hover {
+background-color: #c82333;
 }
