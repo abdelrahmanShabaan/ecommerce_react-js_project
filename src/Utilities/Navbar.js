@@ -72,7 +72,7 @@ function Navbar({ isAuthenticated, onLogout }) {
             <li className="nav-item" to="/whishlist" style={{ color: 'white', marginRight : '1rem' , textAlign: 'center' }}> <CgProfile /> welcome {localStorage.email} </li>
 
             <li className="nav-item">
-            <Link className="nav-item" to="/whishlist" style={{ color: 'white' }}> <FaRegHeart  style={{ color: 'red' }} />  {favoritesCount} Whishlist </Link>
+            <Link className="nav-item" to="/whishlist" style={{ color: 'white' , marginRight :'0.5rem' , textAlign: 'center'}}> <FaRegHeart  style={{ color: 'red' }} />  {favoritesCount} Whishlist </Link>
             </li>
             <li className="nav-item">
             <Link className="nav-item" to="/cart" style={{ color: 'white' }}> <GiShoppingCart />  {cartsCount} cart </Link>

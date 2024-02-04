@@ -13,7 +13,7 @@ function CategoriesPage() {
 
 
                 const [categories, setCategories] = useState([]);
-                const [selectedCategory, setSelectedCategory] = useState("smartphones");
+                const [selectedCategory, setSelectedCategory] = useState("womens-watches");
 
                 useEffect(() => {
                     axios.get(`https://dummyjson.com/products/category/${selectedCategory}`)
@@ -28,6 +28,12 @@ function CategoriesPage() {
                 const handleChange = (e) => {
                     setSelectedCategory(e.target.value);
                 };
+
+
+
+                       
+    
+            
 
             
 
@@ -51,17 +57,13 @@ function CategoriesPage() {
       {/* Right side content */}
       <div className='category-content'>
         {categories.map((category) => (
-          <div key={category.id} className="card card_box">
+          <div key={category.id} className="card card_box" style={{width: '240px' , maxHeight: '490px'}}>
             <img className="card-img-top" src={category.thumbnail} alt={category.title} />
             <div className="card-body">
-              <h5 className="card-title">{category.title}</h5>
-              <p className="card-text">{category.description}</p>
-              <p className="card-text">price :{category.price}$</p>
-              {/* <button className="btn  favbut " onClick={() => addToCart()} style={{color: 'white' , background: 'black' , margin : '1px'}}>add To cart</button>
-              <button className="btn  favbut"  onClick={() => addToFav()}  style={{color: 'white' , background: 'red' , margin : '1px'}} >add To <FaHeart /></button>
-              {cartMessage && (   <div className="alert alert-success  error-message" role="alert" style={{textAlign : 'center' , fontSize:'10px' , height : '1px' ,  width: '100%',marginTop:'3px'}}> {cartMessage} </div>  )}
-              {favMessage && (   <div className="alert alert-success error-message" role="alert" style={{textAlign : 'center' , fontSize:'10px' , height : '1px' ,  width: '100%',marginTop:'3px'}}> {favMessage} </div>  )} */}
-            </div>
+              <h5 className="card-title" style={{marginBottom : '12px', textAlign:'center'}} >{category.title}</h5>
+              <p className="card-text" style={{marginBottom : '1px', textAlign:'center'}}>{category.description}</p>
+              <p className="card card-text" style={{marginTop : '8px', background :'yellow' , textAlign:'center' , fontFamily : 'fantasy'}}>price:{category.price}$</p>
+              </div>
           </div>
         ))}
       </div>

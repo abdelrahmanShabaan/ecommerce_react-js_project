@@ -124,13 +124,13 @@ import { AddToFavoriteAction } from '../Store/Actions/AddToFavoriteAction';
 
         <div className="card">
             <div className='poster'>
-                <img src={props.thumbnail} />
+                <img src={props.thumbnail}/>
             </div>    
             <div className='info'>
               <p className='titles'>{props.title}</p> 
-                <p className='vote'>Price:{props.price}</p>
+                <p className='vote'>Price: {props.price}$</p>
+                <p className='vote'>Brand:{props.brand}</p>
                 <p className='vote'>discount:{props.discountPercentage}</p>
-                <p className='vote'>brand:{props.brand}</p>
             </div>
 
             <div className='oveview' style={{background : 'black'}}>
