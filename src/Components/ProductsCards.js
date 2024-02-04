@@ -136,7 +136,7 @@ import { AddToFavoriteAction } from '../Store/Actions/AddToFavoriteAction';
             <div className='oveview' style={{background : 'black'}}>
             <Link to={`/cartsdata/${props.id}`}>  <button className='btn btn-priamry title_overviews' style={{color: 'black' , background: 'Yellow'}}>Overview</button> </Link>
             <button className="btn btn-outline-primary favbut " onClick={() => addToCart()}  style={{color: 'white' , background: 'blackwhite'}}>add To cart</button>
-            <button className="btn btn-outline-primary favbut"  onClick={() => addToFav()} style={{color: 'white' , background: 'red' , marginTop : '10px'}} >add To <FaHeart /></button>
+            <button className="btn btn-outline-primary favbut" onClick={() => addToFav()} style={{color: 'white' , background: 'red' , marginTop : '10px'}} >add To <FaHeart /></button>
             {cartMessage && (   <div className="alert alert-success  error-message" role="alert" style={{textAlign : 'center' , fontSize:'10px' , height : '1px' ,  width: '100%',marginTop:'3px'}}> {cartMessage} </div>  )}
             {favMessage && (   <div className="alert alert-success error-message" role="alert" style={{textAlign : 'center' , fontSize:'10px' , height : '1px' ,  width: '100%',marginTop:'3px'}}> {favMessage} </div>  )}
 

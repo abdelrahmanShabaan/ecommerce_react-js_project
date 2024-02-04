@@ -3,6 +3,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './CategoriesPageStyle.css';
+import { FaHeart } from "react-icons/fa";
+import { AddToFavoriteAction } from '../Store/Actions/AddToFavoriteAction';
+import AddToCartAction from '../Store/Actions/AddToCartAction';
+import { useDispatch, useSelector } from 'react-redux';
+
 
 function CategoriesPage() {
 
@@ -23,6 +28,8 @@ function CategoriesPage() {
                 const handleChange = (e) => {
                     setSelectedCategory(e.target.value);
                 };
+
+            
 
   return (
     <div className='container containerss'>
@@ -50,7 +57,10 @@ function CategoriesPage() {
               <h5 className="card-title">{category.title}</h5>
               <p className="card-text">{category.description}</p>
               <p className="card-text">price :{category.price}$</p>
-              <a href="#" className="btn btn-primary">Add to Cart</a>
+              {/* <button className="btn  favbut " onClick={() => addToCart()} style={{color: 'white' , background: 'black' , margin : '1px'}}>add To cart</button>
+              <button className="btn  favbut"  onClick={() => addToFav()}  style={{color: 'white' , background: 'red' , margin : '1px'}} >add To <FaHeart /></button>
+              {cartMessage && (   <div className="alert alert-success  error-message" role="alert" style={{textAlign : 'center' , fontSize:'10px' , height : '1px' ,  width: '100%',marginTop:'3px'}}> {cartMessage} </div>  )}
+              {favMessage && (   <div className="alert alert-success error-message" role="alert" style={{textAlign : 'center' , fontSize:'10px' , height : '1px' ,  width: '100%',marginTop:'3px'}}> {favMessage} </div>  )} */}
             </div>
           </div>
         ))}
