@@ -10,6 +10,7 @@ import CartPage from './Pages/CartPage';
 import OneProductCart from './Components/OneProductCart';
 import FavoritesPage from './Pages/FavoritesPage';
 import categoriesPage from './Pages/categoriesPage';
+import NotFoundPage from './Pages/NotFoundPage';
 
 function App() {
   
@@ -38,6 +39,8 @@ function App() {
           <Route exact path={"/cartsdata/:id"} component={OneProductCart} />
           <Route exact path={"/whishlist"} component={FavoritesPage} />
           <Route exact path={"/categories_page"} component={categoriesPage} />
+          <Route exact path={"*"} component={NotFoundPage}/>
+
 
 
 
