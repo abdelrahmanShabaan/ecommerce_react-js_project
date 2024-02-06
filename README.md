@@ -1,9 +1,14 @@
-# Getting Started Before Registration & After Login
+# Getting Started Before Registration
 ![before_login](https://github.com/abdelrahmanShabaan/ecommerce_react-js_project/assets/48605080/ebde24cc-7538-4811-95ec-2f803315a789)
+# Getting Started After Login
 ![after_login](https://github.com/abdelrahmanShabaan/ecommerce_react-js_project/assets/48605080/d456639b-b4c6-4667-beb9-1a6336bc8b22)
+# Getting Started Overview product
 ![overview_product](https://github.com/abdelrahmanShabaan/ecommerce_react-js_project/assets/48605080/c2cb41fa-e8f7-4304-a0c4-d3a5dcd5a76f)
+# Getting Started Categories Page
 ![categories](https://github.com/abdelrahmanShabaan/ecommerce_react-js_project/assets/48605080/6a5a7f6e-ccf9-4b8c-b22f-ff61f0858ed4)
+# Getting Started Favoriate Page
 ![favoriate](https://github.com/abdelrahmanShabaan/ecommerce_react-js_project/assets/48605080/b88654d9-6146-4ebd-90dc-3b6303efa3c3)
+# Getting Started Cart Page
 ![cart](https://github.com/abdelrahmanShabaan/ecommerce_react-js_project/assets/48605080/8243c6fa-b439-4f85-ae10-db6616b9ff31)
 # Getting Started with Create React App
 
